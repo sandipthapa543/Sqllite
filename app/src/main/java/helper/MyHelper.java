@@ -9,10 +9,10 @@ import androidx.annotation.Nullable;
 public class MyHelper extends SQLiteOpenHelper {
      private static final String db_name="Dictionary";
      private static final int db_version=1;
-    private static final String tblName="tblWord";
-    private static final String wordId="wordId";
-    private static final String wordName="wordName";
-    private static final String meaning="meaning";
+     private static final String tblName="tblWord";
+     private static final String wordId="wordId";
+     private static final String wordName="wordName";
+     private static final String meaning="meaning";
 
 
     public MyHelper(@Nullable Context context) {
@@ -21,6 +21,12 @@ public class MyHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
+        String query ="CREATE TABLE " + tblName + " (" +wordId+ " INTEGER PRIMARY KEY AUTOINCREMENT ,"+wordName+ "TEXT,"
+        +meaning+ "TEXT"+ ")";
+
+        db.execSQL(query);
+
 
     }
 
